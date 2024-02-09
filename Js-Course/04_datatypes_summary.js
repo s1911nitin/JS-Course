@@ -42,5 +42,29 @@ let myfunc = function() {
     console.log("Hello World !!");
 }
 
-myfunc()
+// myfunc()
+
+
+/*-------------------------------- Memory location in Javascript ---------------------------------*/
+
+// Stack (Primitive) : It creates a copy means different memory locations not reference                Heap (Non Primitive) : It provides reference means same memory location not a copy
+
+let myFavLang = "Python";
+
+let changeLang = myFavLang;
+changeLang = "Javascript";
+
+// console.log(changeLang, myFavLang);
+
+
+let langArr = {
+    Language : "Python",
+    Popularity : "Most",
+}
+
+let langArray = langArr;
+
+langArray.Language = "Javascript";
+
+console.log(langArr, langArray);
 
