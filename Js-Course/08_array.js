@@ -37,10 +37,34 @@ let myArray = [10,25,55,2.5,1,26];
 
 let newArr = myArray.splice(2,5);
 
-console.log(newArr, myArray);
+// console.log(newArr, myArray);
 
 
 
 /*--------------------------------------Extra Array Methods--------------------------------*/
+
+let marvelHeros = ["Thor","Ironman","Spiderman"];
+let indianHeros = ["Shaktiman","Naagraj","Dogra"];
+
+// console.log(marvelHeros.concat(indianHeros));
+// console.log(marvelHeros.concat(indianHeros));
+
+// console.log([...marvelHeros, ...indianHeros]);
+
+let myNewArray = [2,10,5,[2.5,5,7],67,75,[82,95,[5.6,24]]];
+
+// console.log(myNewArray.flat(Infinity));
+
+let myVar = "Wikipedia";
+
+// console.log(Array.isArray(myNewArray));
+
+// console.log(Array.from(myVar));
+
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+
+console.log(Array.of(score1, score2, score3));
 
 
