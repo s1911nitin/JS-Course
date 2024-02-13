@@ -88,5 +88,15 @@ let databaseObj = [
 // let allValues = Object.values(userObj);
 // console.log(allValues, typeof allValues);
 
-console.log(userObj.hasOwnProperty("isLoggedIn"));
+// console.log(userObj.hasOwnProperty("isLoggedIn"));
 
+
+/*------------------------------Object Destructring--------------------------------*/
+
+// console.log(userObj);
+
+const {name : nm, location : lc, email : em, isLoggedIn : isl} = userObj
+
+// console.log(name, location, email, isLoggedIn);
+
+// console.log(nm, lc, em, isl);
