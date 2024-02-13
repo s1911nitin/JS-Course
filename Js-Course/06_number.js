@@ -11,6 +11,7 @@ let myNum = 5025;
 // console.log(myNumber.toString(), typeof myNumber.toString());
 
 let myNumber = 10000000;
+// console.log(myNumber.toLocaleString());
 // console.log(myNumber.toLocaleString("en-IN"), typeof myNumber.toLocaleString("en-IN"));
 
 
@@ -28,4 +29,6 @@ let myNumber = 10000000;
 
 /* How to fetch a random number between 10 to 20 included (10 and 20) ? */
 
-console.log(Math.floor(Math.random()*11) + 10);
+// console.log(Math.floor(Math.random()*11) + 10);
+
+// console.log(Math.floor(Math.random()*1000000));
