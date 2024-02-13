@@ -25,16 +25,16 @@ let newDate = new Date(2024,1,12);
 // console.log(myDate.getTime());
 
 
-let Month_Arr = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-let WeekDay_Arr = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+// let Month_Arr = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+// let WeekDay_Arr = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-let month = newDate.getMonth();
-let day = newDate.getDay()
-let month_date = newDate.getDate();
-let fullYear = newDate.getFullYear();
+// let month = newDate.getMonth();
+// let day = newDate.getDay()
+// let month_date = newDate.getDate();
+// let fullYear = newDate.getFullYear();
 
-let finalDate = `Date is ${WeekDay_Arr[day]}, ${month_date}-${Month_Arr[month]}-${fullYear}`
-console.log(finalDate, typeof finalDate);
+// let finalDate = `Date is ${WeekDay_Arr[day]}, ${month_date}-${Month_Arr[month]}-${fullYear}`
+// console.log(finalDate, typeof finalDate);
 
 
 
