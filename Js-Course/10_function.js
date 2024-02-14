@@ -31,3 +31,40 @@ function myFunc(username="Animal") {
 // console.log(myFunc());
 // console.log(myFunc("Sam Bahadur"));
 
+
+
+// Rest operators in JS Function
+
+function myFunction(val1, ...rest) {
+    console.log(val1);
+    console.log("Rest Parameters will come up with a bundle of array", rest)
+}
+
+// myFunction("Naveen", "Suresh", "Ramesh", "Pradeep", "Dipanshu")
+
+// How to pass object in a function ?
+
+
+let myObj = {
+    username : "Rahul Dravid",
+    profession : "Cricket",
+}
+
+function myNewFunc(getObj) {
+    console.log(`Username is ${getObj.username} and his profession is ${getObj.profession}`);
+}
+
+// myNewFunc(myObj);
+// myNewFunc({
+//     username : "Rahul Dravid",
+//     profession : "Cricket",
+// });
+
+let myArray = [10,25,2,15,48,85,80]
+
+function myNewFunction(getArray) {
+    console.log(`My array value at index position 4 is ${getArray[4]}`);
+}
+
+// myNewFunction(myArray)
+myNewFunction([10,25,2,15,48,85,80])
