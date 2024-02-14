@@ -16,7 +16,7 @@
 // const average = avg(4,5);         // 4 and 5 are called as Arguments in JS.
 // console.log(`The average of two numbers : ${average}`);
 
-function myFunc(username) {
+function myFunc(username="Animal") {
     // if (username === undefined) {
     //     return `Username cannot be set due to undefined !!` 
     // }
@@ -29,4 +29,5 @@ function myFunc(username) {
 
 // console.log(myFunc("Alka Kumari"));
 // console.log(myFunc());
-console.log(myFunc("Sam Bahadur"));
+// console.log(myFunc("Sam Bahadur"));
+
