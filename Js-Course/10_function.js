@@ -67,4 +67,66 @@ function myNewFunction(getArray) {
 }
 
 // myNewFunction(myArray)
-myNewFunction([10,25,2,15,48,85,80])
+// myNewFunction([10,25,2,15,48,85,80])
+
+
+
+/*---------------------------------Scope in JS----------------------------- */
+
+
+let x = 20;
+
+function myFunc() {
+    // let x = 10;
+    if (x) {
+        let x = 10;
+        console.log(x);
+    }
+    console.log(x);
+}
+
+// myFunc();
+// console.log(x);
+
+
+function one() {
+    const username = "Naveen";
+
+    function two() {
+        const website = "Youtube";
+        console.log(username);
+    }
+
+    // console.log(website);
+    two()
+}
+// one();
+
+
+if (true) {
+    const username = "Naveen";
+
+    if (username === "Naveen") {
+        const website = " Youtube";
+        console.log(username + website);
+    }
+
+    // console.log(website);
+}
+
+// console.log(username);
+
+
+function addone(num) {
+    return num + 1
+}
+
+addone(5)
+
+
+const addtwo = function (num) {
+    return num + 2
+}
+
+addtwo(6)
+
