@@ -3,6 +3,8 @@
 
 /* 
     IIFE - This is a function which is executed immediately at the time file loaded and it helps us to avoid the global scope pollution.
+
+    Example : You have one web application and you want to start database connection code in a file once the app is loaded immediately.
 */
 
 
