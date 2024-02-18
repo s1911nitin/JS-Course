@@ -140,7 +140,7 @@ const userEmail = "nitz9@outlook.com";
 
 
 /*
-    Nullishing coalscening operator : ??
+    Nullishing coalescing operator : ??
 
     It is used to avoid null or undefined return value into a variable after any computation may be some computing we have done with the datebase and resulting a return value null or undefined so we can pass any other value.
 
