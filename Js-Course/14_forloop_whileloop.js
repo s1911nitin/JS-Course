@@ -83,3 +83,46 @@
 //     console.log(myArray[index]);
 //     index +=1
 // }
+
+
+// do while loop : It is executed before condition check !!
+
+// Write a program to print 0 to 50 numbers ?
+
+// let index = 0;
+
+// do {
+//     console.log(index);
+//     index +=1
+// } while (index < 51);
+
+
+// Write a program to print 5 to 50 numbers ?
+
+
+// let index = 0;
+
+// do {
+//     if (index < 5) {
+//         index +=1
+//         continue
+//     }
+//     console.log(index);
+//     index +=1
+// } while (index < 51);
+
+
+let myArray = ["Potato", "Tomato", "Brinjal", "Cauli Flower", "Carrot", "Turnip"];
+
+let index = 0;
+
+do {
+    if (myArray[index] === "Cauli Flower") {
+        index +=1
+        continue
+    } else if (myArray[index] === "Carrot") {
+        break
+    }
+    console.log(myArray[index]);
+    index +=1
+} while (index < myArray.length);
