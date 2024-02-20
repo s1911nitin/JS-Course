@@ -127,3 +127,46 @@ let myArray = [1,2,3,4,5,6,7,8,9,10];
 
 const newArray = myArray.map((item)=> item * item).filter((item) => item>=25 ? item : "")
 // console.log(newArray);
+
+
+
+
+/*--------------------------------------------------- reduce ---------------------------------------------------*/
+
+// let myArray = [1,2,3,4];
+
+// const indexValue = 0;
+
+// const result = myArray.reduce(function (accumulator, currentValue) {
+//     return (accumulator + currentValue)
+// }, indexValue)
+
+
+
+// const result = myArray.reduce((acc, currVal)=> (acc + currVal),0)
+
+// console.log(result);
+
+
+let courses = [
+    {
+        courseName : "Javascript",
+        price : 2999
+    },
+    {
+        courseName : "Python",
+        price : 3999
+    },
+    {
+        courseName : "Data Science",
+        price : 12999
+    },
+    {
+        courseName : "Ethical Hacking",
+        price : 4999
+    },
+]
+
+
+const totalToPay = courses.reduce((acc, item) => (acc + item.price), 0)
+console.log(totalToPay);
