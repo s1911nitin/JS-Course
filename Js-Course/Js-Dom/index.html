@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
 
+    <style>
+        .bg-black{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+
+    <ul class="javascript">
+        <li>Javascript</li>
+    </ul>
+
+</body>
+<script>
+
+    // function langName(lang) {
+    //     const myul = document.querySelector(".javascript");
+    //     const myli = document.createElement("li");
+    //     myli.innerHTML = lang;
+    //     myul.appendChild(myli);      
+    // }
+
+    function langName(lang) {
+        const myul = document.querySelector(".javascript");
+        const myli = document.createElement("li");
+        myli.appendChild(document.createTextNode(lang))
+        myul.appendChild(myli);      
+    }
+
+    langName("Python");
+    langName("Typescript");
+    langName("Golang");
+
+
+    function EditLang(lang) {
+        const myul = document.querySelector(".javascript");
+        const myli = myul.querySelector("li:nth-child(2)");
+        const myupdatedli = document.createElement("li");
+        myupdatedli.appendChild(document.createTextNode(lang));
+
+        myli.replaceWith(myupdatedli);
+
+        const firstLi = myul.querySelector("li");
+
+        firstLi.outerHTML = "<li>Java</li>";
+
+        // const delli = myul.querySelector("li:last-child");
+        // myul.removeChild(delli);
+        // myul.querySelector("li:last-child").remove();
+    }
+
+    EditLang("Mojo");
+
+</script>
+</html>
