@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Project 4</title>
+    <style>
+        #wrapper{
+            height: 500px;
+            width: 500px;
+            background-color: #3b3b3b;
+            margin: auto;
+            text-align: center;
+        }
+
+        #subt{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div id="wrapper">
+        <h1>Number guessing game</h1><br>
+        <p>Try and guess a number between 1 and 100.</p>
+        <p>You have 10 attempts to guess the right number.</p><br>
+        
+        <form action="#">
+            <label for="guessField" id="guess">Guess a number</label>
+            <input type="text" name="guessField" id="guessField"><br><br>
+            <input type="submit" value="Submit guess" id="subt" class="guessSubmit">
+        </form>
+
+        <div class="resultParas">
+            <p>Previous guessing: <span class="guesses"></span></p>
+            <p>Guesses remaining: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+</body>
+<script src="project_4.js"></script>
+</html>
+</html>
