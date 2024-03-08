@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Project 3</title>
+
+    <style>
+        .container{
+            height: 200px;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+        }
+
+        #clock{
+            height: 25px;
+            width: 120px;
+            background-color: orange;
+            margin: auto;
+            padding-top: 2px;
+            color: black;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+    <div class="container">
+        <h2>Digital Clock</h2>
+        <div id="clock"></div>
+    </div>
+</body>
+
+<script>
+    setInterval(()=>{
+        const curDate = new Date();
+        const clock = document.getElementById("clock");
+
+        if (curDate.getHours() >=12 || curDate.getHours() < 24) {
+            const final_result = `${curDate.toLocaleTimeString()} PM`;
+            clock.innerHTML = final_result;
+
+        } else if (curDate.getHours() < 12) {
+            const final_result = `${curDate.toLocaleTimeString()} AM`;
+            clock.innerHTML = final_result;
+        }
+    }, 1000);
+
+    
+</script>
+</html>
