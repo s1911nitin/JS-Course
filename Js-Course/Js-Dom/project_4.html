@@ -5,39 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM | Project 4</title>
     <style>
-        #wrapper{
-            height: 500px;
+        #container {
             width: 500px;
-            background-color: #3b3b3b;
+            height: 500px;
             margin: auto;
             text-align: center;
-        }
-
-        #subt{
-            background-color: #212121;
-            color: #fff;
+            background-color: #3b3b3b;
         }
     </style>
 </head>
-<body style="background-color: #212121; color: #fff;">
-    <div id="wrapper">
-        <h1>Number guessing game</h1><br>
-        <p>Try and guess a number between 1 and 100.</p>
-        <p>You have 10 attempts to guess the right number.</p><br>
-        
+<body style="background-color: #212121; color: #fff">
+
+    <div id="container">
+        <h1>Number guessing game:</h1>
+        <p>Try and generate a random number between 1 and 100.</p>
+        <p>You have 10 attempts to guess a number.</p> <br><br>
+
         <form action="#">
-            <label for="guessField" id="guess">Guess a number</label>
+            <label for="guessField">Guess a number:</label>
             <input type="text" name="guessField" id="guessField"><br><br>
-            <input type="submit" value="Submit guess" id="subt" class="guessSubmit">
+            <input type="submit" value="Submit">
         </form>
 
         <div class="resultParas">
-            <p>Previous guessing: <span class="guesses"></span></p>
-            <p>Guesses remaining: <span class="lastResult">10</span></p>
-            <p class="lowOrHi"></p>
+            <p>Previous guesses: <span class="guessesSlot"></span></p>
+            <p>Remaining guesses: <span class="remainingCount">10</span></p>
+            <p class="lowOrhigh"></p>
         </div>
     </div>
+    
 </body>
 <script src="project_4.js"></script>
-</html>
 </html>
