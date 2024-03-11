@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Events</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img src="DomEventsImages/photoshop.jpg" alt="photoshop" id="photoshop" width="150px"></li>
+            <li><img src="DomEventsImages/japan.jpg" alt="japan" id="japan" width="150px"></li>
+            <li><img src="DomEventsImages/river.jpg" alt="river" id="river" width="150px"></li>
+            <!-- <li><img src="DomEventsImages/owl.jpg" alt="owl" id="owl" width="150px" onclick="itemClick()"></li> //Not a good approach -->
+            <li><img src="DomEventsImages/owl.jpg" alt="owl" id="owl" width="150px"></li>
+            <li><img src="DomEventsImages/prayer.jpg" alt="prayer" id="prayer" width="150px"></li>
+            <li><a href="https://www.google.com" style="color:aliceblue" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // function itemClick(e) {
+    //     alert("owl clicked")
+    //     console.log(e);               // undefined
+    // }
+
+
+    // document.getElementById("owl").onclick = function (e) {
+    //     alert("owl clicked")
+    //     console.log(e);                  // Slightly good approach but not the best one
+
+    // }
+
+
+    /*------------------------------------------------------------------------------------------------------*/
+
+
+    // Best event approach
+
+
+    /* What we should know inside e object mainly ?  
+
+        type , timeStamp
+        target , toElement , srcElement , currentTarget
+        clientX , clientY , screenX , screenY
+        altKey , ctrlKey , shiftKey , keycode
+        target.tagName
+
+    */
+
+
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //     console.log(e);
+    //     console.log(e.type, e.timeStamp);
+    //     console.log(e.target , e.toElement , e.srcElement , e.currentTarget);
+    //     console.log(e.clientX , e.clientY , e.screenX , e.screenY);
+    //     console.log(e.altKey , e.ctrlKey , e.shiftKey);
+    //     console.log(e.target.tagName);
+
+    // })
+
+    
+    // Event Propogation :    Event Bubbling (Default Propogation approach) - Bottom to top
+
+    // document.querySelector("#images").addEventListener("click", function (e) {
+    //     console.log("clicked inside the ul.");
+    //     console.log(e.target , e.currentTarget);
+    // }, false)
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //     console.log("owl clicked.");
+    //     console.log(e.target , e.currentTarget);    // target : return an element where we clicked on      currentTarget : return an element where event was applied on.
+    // }, false)
+
+    /* How to stop propogation for inner element and separate event script for outer element ? */
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //     e.stopPropagation();
+    //     console.log("owl clicked.");
+    // }, false)
+
+
+    // Event Capturing :     Event Capturing - Top to bottom
+
+    // document.querySelector("#images").addEventListener("click", function (e) {
+    //     console.log("clicked inside the ul.");
+    // }, true)
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //     console.log("owl clicked.");
+    // }, true)
+
+
+
+    // document.querySelector("#images").addEventListener("click", function (e) {
+    //     // const removeIt = e.target.parentNode;
+    //     // removeIt.remove();
+
+    //     // removeIt.parentNode.removeChild(removeIt);
+
+
+    //     if (e.target.tagName === "IMG") {
+    //         const removeIt = e.target.parentNode;
+    //         removeIt.parentNode.removeChild(removeIt);
+    //     }
+    // })
+
+
+    /*----------------------------------------------------------------------------------------*/
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+        console.log("clicked inside the ul.");
+    })
+
+    document.getElementById("google").addEventListener("click", (e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("Google");
+    })
+
+</script>
+</html>
