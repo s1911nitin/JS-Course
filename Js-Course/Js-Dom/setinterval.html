@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>Chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(()=>{
+    //     console.log("Hello Universe");
+    // },2000)
+
+    // const myfunc = function () {
+    //     console.log("Hello Universe", Date.now());
+    // }
+
+    // setInterval(myfunc, 2000)
+
+    const myfunc = function () {
+        console.log("Hello Universe", Date.now());
+    }
+
+    let my_intervalref;
+
+    if (!my_intervalref) {
+        document.getElementById("start").addEventListener("click", function () {
+        my_intervalref = setInterval(myfunc, 2000);
+    })        
+    }
+
+
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(my_intervalref);
+        my_intervalref = null;
+    })
+</script>
+</html>
