@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Picker</title>
+    <style>
+        .project{
+            height: 500px;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press the key and watch the magic.</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("keydown", function (e) {
+        document.getElementById("insert").innerHTML = `
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Key</th>
+                    <th scope="col">Key Code</th>
+                    <th scope="col">Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">${e.key===" "?"Space":e.key}</th>
+                    <td>${e.keyCode}</td>
+                    <td>${e.code}</td>
+                </tr>
+            </tbody>
+        </table>
+        `
+    })
+</script>
+</html>
