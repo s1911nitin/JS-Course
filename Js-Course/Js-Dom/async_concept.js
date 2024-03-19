@@ -57,8 +57,9 @@
             total = undefined;
 
             One call is assigned all of sudden here due to setTimeout api to register this callback and assigned it further to
-            task queue which could be high priority task queue when we have promises apis and then put it again into the callstack to
-            excute later after some specific time period.
+            task queue which could be high priority task queue when we have promises apis and one event loop is there which checks
+            that async apis needs to be executed now that time it is then put it again into the callstack to execute later after some 
+            specific time period.
 
             Meanwhile, further execution of a function or program will not stop and execution phase will come into a role now.
 
