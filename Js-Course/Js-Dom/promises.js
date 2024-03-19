@@ -171,3 +171,41 @@ promiseObject.then((response)=>{
 .catch((error)=>{
     console.log(error);
 })
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*
+    Why fetch code was executed first even it is written below and async apis was available above in the code ?
+
+    This is because when fetch Api or call is assigned to register callback through promises so it is further
+    assigned to high priority task queue or micro task queue and it is added again into the callstack on priority
+    basis to complete prior to async call apis as well.
+
+    response = fetch()     // response is a promise object.
+
+    Working of fetch() :  Everybody knows it returns a promise object and we know how to deal with then and catch
+    method in promises this is known by everybody but fetch is not completed yet, there must be something else to
+    be known.
+
+    The real working of fetch() is once fetch call is passed so it is divided into two part behind the scene
+    one is memory allocation part and the other one is network request.
+
+    All of a sudden fetch call is passed so one variable data for collecting data from the network request is declared,
+    network request will return a response if it is positive or a pure response which we are expecting so it is
+    forwarded to the onfulfilled [] or if errors comes it is forwarded to the onrejection [] inside these array
+    we have fn callback which will triggered accordingly and then data response will be assigned into the variable
+    data and then data has responsibility to pass the result of data into our variable response which is a promise
+    object of fetch() call.
+
+
+*/
