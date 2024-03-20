@@ -124,3 +124,80 @@ available at Array() constructor function and will be used by myObj only.
 
 
 
+
+
+
+
+
+// function User(username, score) {
+//     this.username = username
+//     this.score = score
+// }
+
+// user1 = new User("Nitz", 100)
+// user2 = new User("Nitz2", 200)
+
+// User.prototype.increment = function () {
+//     this.score +=1
+//     return this.score
+// }
+
+// User.prototype.printMe = function () {
+//     console.log(`The current score: ${this.score}`);
+// }
+
+// user2.increment()
+// user2.increment()
+// user2.printMe()
+// user2.printMe()
+
+
+// Note : Constructor function can only be created using new and fn function keyword but new is not available for arrow function so cannot create a constructor function using arrow function it will give us an error.
+
+
+
+
+/************************************Prototype inherital approach*********************************** */
+
+obj1 = {
+    harry:2,
+    larry:4,
+}
+
+
+// console.log(obj1.harry);
+
+obj2 = {
+    carry:6,
+    sherry:8,
+}
+
+// console.log(obj2.carry);
+
+Object.prototype.cherry = 10   // this property will be accessible by both obj1 and obj2 as we have inserted it into super prototype Object.
+
+// console.log(obj1.cherry, obj2.cherry);
+
+/*
+    Cannot we use the property of others object which are only present inside themselves in spite of super prototype Object ?
+
+    We can by using __proto__ which was traditonally used and now modern technique to use isPrototypeOf.
+*/
+
+// console.log(obj2.harry, obj2.carry);
+
+// obj2.__proto__ = obj1                                         // That was traditional approach
+
+// console.log(obj2.harry, obj2.carry, obj1.sherry);
+
+
+// New approach is using of isPrototypeOf   
+
+
+Object.setPrototypeOf(obj2, obj1)
+
+console.log(obj2.carry, obj2.harry);
+
+
+
+
