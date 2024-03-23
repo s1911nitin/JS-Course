@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body style="background-color: black; color: white;">
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(library, server){
+            this.library = library
+            this.server = server
+
+            /*  project requirement - When an object or instance of React class is created
+                all of sudden we need reference this of above button and using that reference 
+                we will call a handler inside react class to execute something as well as
+                inside that handler we also want the reference this of React class which 
+                generally disappear when we call handler using different reference like button.
+            */
+
+            document
+                    .querySelector("button")
+                    .addEventListener("click", this.clickHandler.bind(this))
+
+        }
+
+        clickHandler(){
+            console.log("React class reference:", this)
+            console.log(this.server);
+        }
+
+
+
+    }
+
+    const app = new React("library", "https://127.0.0.1:3000/")
+
+    app.clickHandler()
+
+
+
+    /*
+        Note : 
+        
+        When we call clickHandler using current context object app so we will get a reference of current
+        context object app only inside clickHandler in a form of this keyword due to which we can easily 
+        get an access of this.library or this.server.
+
+        But as our requirement says when we click on button so this time due to event listener we will
+        call clickHandler using current context object of button in a form of this keyword and therefore
+        we will have access of this keyword in a form of button object will be available only inside
+        clickHandler method so we are not able to access React class instant variables inside clickHandler
+
+        This is a huge problem how we can overcome this.
+
+
+        We have one method called bind here which will help us to provide this of React class inside
+        clickHandler even we will call clickHandler method using object of button still we will be able
+        to get an access of React class current context object in a form of this,  This is what we were
+        looking for.
+
+        syntax :  document.querySelector("button").addEventListener("click", this.clickHandler.bind(this))
+
+
+        Due to which we will be able to get an access of React class current context object inside clickHandler
+        even it was called due to click event using button click.
+
+
+
+
+    */
+</script>
+</html>
