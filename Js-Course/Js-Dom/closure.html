@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body style="background-color: black; color: white;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // document.getElementById("orange").addEventListener("click", function () {
+    //     document.body.style.backgroundColor = "orange"
+    // })
+    // document.getElementById("green").addEventListener("click", function () {
+    //     document.body.style.backgroundColor = "green"
+    // })
+
+    // Note : addEventListener takes two parameters one is event and another is callback fn.
+
+
+    // function colorChanger(color) {
+    //     document.body.style.backgroundColor = color
+    // }
+
+    // document.getElementById("orange").addEventListener("click", colorChanger)   // This is not callback fn it is just a reference or declaration of a fn which cannot be helpful for addEventLister as it demands callback fn.
+    // document.getElementById("green").addEventListener("click", colorChanger)
+
+
+    // document.getElementById("orange").addEventListener("click", colorChanger("orange"))  // It is calling the fn straight away without even click on button which comes under addEventListerner.
+    // document.getElementById("orange").addEventListener("click", colorChanger("green"))
+
+
+    /********************************************************closure*******************************************************/
+
+    function colorChanger(color) {
+
+        return function inner() {
+            document.body.style.backgroundColor = color        
+        }
+
+    }
+
+    document.getElementById("orange").addEventListener("click", colorChanger("orange"))   // Here we will get callback fn inner fn which is required by addEventListener to comes under the role and this inner fn has scope of colorChanger due to lexical scoping.
+    document.getElementById("green").addEventListener("click", colorChanger("green"))
+
+</script>
+</html>
