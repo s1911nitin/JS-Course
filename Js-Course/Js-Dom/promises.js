@@ -118,6 +118,51 @@ async function anotherFunctionComplete() {
 anotherFunctionComplete()
 
 
+
+
+
+// Found new due to revision :
+
+const promiseFive = new Promise((resolve, reject)=>{
+    // async operation
+    let error = false
+
+    if (!error) {
+        setTimeout(()=>{
+            console.log("Async4 task is completed now !!")
+            resolve({username:"Harry"})
+        }, 1000)       
+    } else {
+        reject("Error has come up !!")
+    }
+
+})
+
+
+async function compleFunction(){
+    try{
+        const user = await promiseFive
+        console.log(user);
+        return user.username
+    }catch(error){
+        console.log("Error is ", error)
+    }
+
+}
+
+
+async function completeUsername(){
+    try{
+        const username = await compleFunction()
+        console.log(username);
+    }catch(err){
+        console.log("Err is ", error);
+    }
+}
+
+completeUsername()
+
+
 /*---------------------------------------------------fetch API-------------------------------------------------*/
 
 
